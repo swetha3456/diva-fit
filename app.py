@@ -1,5 +1,6 @@
 from flask import Flask, render_template, session, url_for, redirect, request, flash
 from dbfunctions import *
+from recommendations import get_recommendation
 
 app = Flask(__name__)
 app.secret_key = b"030a8ee0eb274b3e7fd9db490b0fd6a532b1fa1f1fd6825c5852c7363358c4b6"
@@ -12,8 +13,16 @@ def about():
 def home():
     if "username" not in session:
         return redirect(url_for("login"))
+    
+    pie_chart_info = days_left(session["username"])
+    
+    context = {
+        "recommendation" : get_recommendation(get_details(session["username"])),
+        "num_days_left" : pie_chart_info[0],
+        "percentage" : pie_chart_info[1]
+    }
 
-    return render_template("userhome.html")
+    return render_template("userhome.html", context=context)
 
 @app.route("/calendar")
 def calendar():

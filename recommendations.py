@@ -1,5 +1,5 @@
 def get_recommendation(phase, age_group, fitness_goal):
-    if phase == 'mestrual':
+    if phase == 'menstrual':
         if age_group == "teen":
             if fitness_goal == "lose weight":
                 text = "Nutrition: Focus on balanced meals with lean proteins, whole grains, and plenty of fruits and vegetables to support weight management and provide essential nutrients. Exercise: Engage in moderate-intensity activities like brisk walking, cycling, or dancing to burn calories and improve mood. Hydration: Drink water and herbal teas to stay hydrated and reduce bloating."
@@ -7,7 +7,7 @@ def get_recommendation(phase, age_group, fitness_goal):
                 text = "Nutrition: Consume adequate protein to support muscle repair and growth, along with complex carbohydrates for sustained energy. Exercise: Incorporate strength training exercises such as bodyweight squats, lunges, and push-ups to build muscle and improve overall strength. Rest: Ensure sufficient rest between workouts to allow muscles to recover and grow."
             elif fitness_goal == "gain weight":
                 text = "Nutrition: Increase calorie intake with nutrient-dense foods like nuts, seeds, avocados, and healthy oils to promote weight gain in a healthy manner. Exercise: Focus on strength training exercises to build muscle mass, combined with compound movements like deadlifts and bench presses. Hydration: Drink fluids regularly to stay hydrated and support muscle function."
-        elif age_group == "young adult":
+        elif age_group == "adult":
             if fitness_goal == "lose weight":
                 text = "Nutrition: Track calorie intake and focus on portion control, incorporating whole foods and limiting processed foods and added sugars. Exercise: Include a combination of cardiovascular exercises like running or HIIT workouts with strength training to maximize calorie burn and fat loss. Sleep: Prioritize quality sleep to support metabolism and overall well-being."
             elif fitness_goal == "gain strength":
@@ -29,7 +29,7 @@ def get_recommendation(phase, age_group, fitness_goal):
                 text = "Nutrition: During the follicular phase, consume adequate protein to support muscle repair and growth, along with complex carbohydrates for sustained energy. Exercise: Incorporate strength training exercises such as bodyweight squats, lunges, and push-ups to build muscle and improve overall strength. Rest: Ensure sufficient rest between workouts to allow muscles to recover and grow."
             elif fitness_goal == "gain weight":
                 text = "Nutrition: During the follicular phase, increase calorie intake with nutrient-dense foods like nuts, seeds, avocados, and healthy oils to promote weight gain in a healthy manner. Exercise: Focus on strength training exercises to build muscle mass, combined with compound movements like deadlifts and bench presses. Hydration: Drink fluids regularly to stay hydrated and support muscle function."
-        elif age_group == "young adult":
+        elif age_group == "adult":
             if fitness_goal == "lose weight":
                 text = "Nutrition: During the follicular phase, track calorie intake and focus on portion control, incorporating whole foods and limiting processed foods and added sugars. Exercise: Include a combination of cardiovascular exercises like running or HIIT workouts with strength training to maximize calorie burn and fat loss. Sleep: Prioritize quality sleep to support metabolism and overall well-being."
             elif fitness_goal == "gain strength":
@@ -51,7 +51,7 @@ def get_recommendation(phase, age_group, fitness_goal):
                 text = "Nutrition: During the ovulation phase, prioritize protein intake to support muscle repair and growth, and consume complex carbohydrates for sustained energy during workouts. Exercise: Incorporate compound exercises like squats, deadlifts, and bench presses into your strength training routine to maximize muscle activation and strength gains. Recovery: Ensure adequate rest and sleep to promote muscle recovery and growth."
             elif fitness_goal == "gain weight":
                 text = "Nutrition: During the ovulation phase, increase calorie intake with nutrient-dense foods like nuts, seeds, whole grains, and lean proteins to support weight gain goals. Exercise: Focus on progressive overload during strength training sessions by gradually increasing weights and/or repetitions to stimulate muscle growth. Hydration: Drink enough fluids to stay hydrated, especially if engaging in intense workouts to support muscle function and recovery."
-        elif age_group == "young adult":
+        elif age_group == "adult":
             if fitness_goal == "lose weight":
                 text = "Nutrition: During the ovulation phase, prioritize whole foods rich in vitamins, minerals, and antioxidants, and limit processed foods and added sugars to support weight loss efforts. Exercise: Incorporate high-intensity interval training (HIIT) or circuit training workouts to maximize calorie burn and boost metabolism. Recovery: Allow time for rest and recovery between workouts to prevent overtraining and support muscle repair."
             elif fitness_goal == "gain strength":
@@ -73,7 +73,7 @@ def get_recommendation(phase, age_group, fitness_goal):
                 text = "Nutrition: During the luteal phase, prioritize protein-rich foods like eggs, poultry, fish, and legumes to support muscle repair and growth. Exercise: Incorporate strength training exercises using resistance bands or free weights to maintain muscle mass and improve overall strength. Recovery: Allow for adequate rest and recovery between workouts to prevent overtraining and promote muscle repair."
             elif fitness_goal == "gain weight":
                 text = "Nutrition: During the luteal phase, increase calorie intake with nutrient-dense foods like nuts, seeds, avocados, and whole milk to support weight gain goals. Exercise: Focus on compound exercises that target multiple muscle groups, such as squats, deadlifts, and bench presses, and gradually increase weights and volume to promote muscle growth. Hydration: Drink plenty of fluids to stay hydrated and support muscle recovery."
-        elif age_group == "young adult":
+        elif age_group == "adult":
             if fitness_goal == "lose weight":
                 text = "Nutrition: During the luteal phase, emphasize portion control and choose nutrient-dense foods like fruits, vegetables, whole grains, and lean proteins to support weight loss efforts. Exercise: Incorporate a mix of cardio and strength training exercises to maximize calorie burn and preserve lean muscle mass. Stress Management: Practice stress-reducing activities like yoga, meditation, or spending time outdoors to manage stress and prevent emotional eating."
             elif fitness_goal == "gain strength":
