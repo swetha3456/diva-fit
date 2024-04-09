@@ -158,6 +158,23 @@ def exercise_high_knees():
 
     return render_template('high_knee_exercise.html')
 
+# Route for high knees exercise
+@app.route('/exercise/toe_touch')
+def exercise_toe_touch():
+    global exercise_thread, current_exercise
+
+    # Stop the previous exercise thread if running
+    if exercise_thread and exercise_thread.is_alive():
+        exercise_thread.join()
+
+    # Start new thread for high knees exercise
+    exercise_thread = threading.Thread(target=toe_touch_count)
+    exercise_thread.start()
+    current_exercise = 'toe touch'
+
+    return render_template('toe_touch_exercise.html')
+
+
 def curl_count():
     counter = 0
     number_of_reps = 5
@@ -258,6 +275,57 @@ def high_knee_count():
     # Emit the frame to the frontend
     socketio.emit('video_frame', {'image': frame_bytes.decode('utf-8')})
         
+    
+
+    cap.release()
+    cv2.destroyAllWindows()
+
+
+def toe_touch_count():
+    counter = 0
+    number_of_reps = 5
+    cap = cv2.VideoCapture(0)
+    stage = None
+    while counter < number_of_reps:
+        ret, frame = cap.read()
+
+        if not(ret):
+            break
+        image, counter, stage = exercise_fns.count_toe_touch(frame, counter, number_of_reps, stage)
+
+        if cv2.waitKey(10) & 0xFF == ord('q'):
+            break
+
+        # Convert the frame to JPEG format
+        _, buffer = cv2.imencode('.jpg', image)
+        frame_bytes = base64.b64encode(buffer)
+
+
+        # Emit the frame to the frontend
+        socketio.emit('video_frame', {'image': frame_bytes.decode('utf-8')})
+
+    ret, frame = cap.read()
+    
+    image = np.zeros((500, 500, 3), np.uint8)
+
+    cv2.putText(image, str(counter) + '/' + str(number_of_reps), 
+            (10,60), 
+            cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
+    
+
+    cv2.putText(image, 'Well done!!', 
+            (100,200), 
+            cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
+    
+
+    # Convert the frame to JPEG format
+    _, buffer = cv2.imencode('.jpg', image)
+    frame_bytes = base64.b64encode(buffer)
+
+
+    # Emit the frame to the frontend
+    socketio.emit('video_frame', {'image': frame_bytes.decode('utf-8')})
+    
     
 
     cap.release()
