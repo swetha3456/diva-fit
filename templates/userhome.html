@@ -10,10 +10,10 @@
         <div class="logo">Diva-Fit</div>
         <div>
             <li class="links">
-                <ul class="item" href="/home">Home</ul>
-                <ul class="item">Start workout</ul>
-                <ul class="item">Calendar</ul>
-                <ul class="item">About</ul>
+                <ul class="item"><a href="{{ url_for('home') }}">Home</a></ul>
+                <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
+                <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
+                <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
             </li>
         </div>
     </div>
@@ -22,9 +22,6 @@
         :root {
             --per-parameter: {{context["percentage"]}};
         }
-
-        /* Use the CSS variable in your CSS rules */
-
     </style>
     <div class="up">
         <div class="chart">
@@ -54,9 +51,10 @@
           <div class="field">
             <form method="POST">
               <input autocomplete="off" placeholder="Ask your questions here" class="input-field" name="question" type="text">
-              <button type="submit">Ask</button>
             </form>
+            <button class="btn" type="submit" value="">Ask</button>
           </div>
+          <img class="qi"src="{{url_for('static', filename='question.png')}}">
           <div class="ans">
             Answer: {{ answer }}
           </div>
