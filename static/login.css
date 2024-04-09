@@ -19,7 +19,7 @@ p{
     position:absolute;
 }
 .myVideo2{
-    top: 800px;
+    top: 600px;
     width:100%;
     position:absolute; 
     transform: rotate(180deg);
