@@ -32,7 +32,15 @@ data = [
                  ("I'm traveling and don't have access to a gym. What are some exercises I can do without equipment?", "Bodyweight exercises like push-ups, squats, lunges, and planks are great options for working out while traveling. You can also incorporate resistance bands or use household items like water bottles or backpacks as makeshift weights."),
                     ("I'm pregnant. What exercises are safe for me to do?", "Congratulations! Low-impact exercises like swimming, walking, and prenatal yoga are generally safe during pregnancy. It's best to consult with your healthcare provider before starting any new exercise routine."),
                  ("I have a knee injury. What exercises can I do to strengthen my knee?", "Exercises that focus on strengthening the muscles around the knee, such as leg lifts and hamstring curls, can help improve knee stability. It's important to avoid exercises that cause pain or discomfort."),
-                 ("I'm trying to lose weight. What types of exercises are best for burning calories?", "Cardiovascular exercises like running, cycling, and HIIT workouts are effective for burning calories. Additionally, incorporating strength training exercises can help increase muscle mass and boost metabolism.")
+                 ("I'm trying to lose weight. What types of exercises are best for burning calories?", "Cardiovascular exercises like running, cycling, and HIIT workouts are effective for burning calories. Additionally, incorporating strength training exercises can help increase muscle mass and boost metabolism."),
+    ("I'm in my 60s and want to stay active. What exercises are suitable for seniors?", 
+     "Seniors can benefit from activities like walking, water aerobics, gentle yoga, tai chi, and resistance training using light weights or resistance bands to maintain mobility, strength, and balance."),
+     
+    ("What exercises can teenagers do to stay active?", 
+     "Teenagers can participate in team sports, individual sports, strength training, yoga, and other activities to stay active and healthy during their adolescent years."),
+    
+    ("I'm in my 20s and want to improve my fitness. What exercises do you recommend?", 
+     "In your 20s, you can focus on a variety of exercises including strength training, cardio (such as running, cycling, or swimming), HIIT workouts, and flexibility training to improve overall fitness.")
 ]
 
 questions = [item[0] for item in data]
@@ -144,6 +152,7 @@ exercise_advice = {
     "warm": "Increase blood flow to muscles and prepare your body for exercise with a dynamic warm-up.",
     "stretches": "Incorporate a variety of stretches targeting different muscle groups for improved flexibility.",
     "exercise": "Consistency is key; make it a habit to move your body regularly.",
+    "exercises": "Consistency is key; make it a habit to move your body regularly.",
     "workout": "Challenge yourself with different workouts to keep things interesting.",
     "activity": "Find activities you enjoy to make exercise feel like fun, not work.",
     "fitness": "Focus on progress, not perfection, and celebrate your achievements.",
@@ -222,4 +231,4 @@ def _predict(input_text):
         return None
     
     
-print(predict(input_text = "write hello world java code"))
+print(predict(input_text = "Recommend the best strength training exercise"))
