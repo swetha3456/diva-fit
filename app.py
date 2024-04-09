@@ -82,20 +82,6 @@ def register():
 
     return render_template("signin.html")
 
-which_exercise = None
-
-# @app.route('/exercise/curl_count')
-# def exercise_curl():
-#     curl_thread = threading.Thread(target=curl_count)
-#     curl_thread.start()
-#     return render_template('curl_exercise.html')
-
-# @app.route('/exercise/high_knees')
-# def exercise_high_knees():
-#     high_knees_thread = threading.Thread(target=high_knee_count)
-#     high_knees_thread.start()
-#     return render_template('high_knee_exercise.html')
-
 
 
 # Route for curl exercise
