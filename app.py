@@ -64,6 +64,16 @@ def home():
 
     return render_template("userhome.html", context=context, question=question, answer=answer)
 
+@app.route("/vaccine")
+def vaccine():
+    age_group, _, _ = get_details(session['username'])
+    if age_group == 'adult':
+        return render_template("adult_vaccine.html")
+    elif age_group == 'teen':
+        return render_template("teen_vaccine.html")
+    elif age_group == 'old' :
+        return render_template("old_vaccine.html")   
+
 @app.route("/calendar")
 def calendar():
     if "username" not in session:
