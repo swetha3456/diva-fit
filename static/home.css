@@ -53,18 +53,21 @@ background-size: cover;
 }
 .up h3{
     color: #823473;
-    font-size: x-large;
+    font-size: xx-large;
+    text-align: center;
+    font-weight:200;
 }
 .rec{
     color:rgb(74, 71, 73);
     background-color: #fddbe0;
     height: max-content;
-    padding:30px;
+    padding:10px;
     border-radius:20px;
     border-style: solid;
     border-color: #823473;
     border-width: 20px;
-    margin-top:30px;
+    margin-top:35px;
+    margin-right:10px;
 }
 
 .row{
@@ -85,6 +88,7 @@ h4{
 p{
     margin-block-start: 0px;
     margin-block-end: 0px;
+    padding:10px;
     
 }
 .chart{
@@ -145,7 +149,7 @@ p{
     background:var(--c);
     transform:rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
   }
- 
+
   .animate {
     animation:p 1s .5s both;
   }
@@ -158,3 +162,65 @@ p{
   @keyframes p {
     from{--p:0}
   }
+
+  .down{
+    font-family: "Titan One", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size:50px;
+    margin:20px;
+    display: flex;
+   align-items: center;
+   justify-content:center;
+    background-color: #823473;
+    border-radius: 10px;
+    padding: 10px;
+    height:400px;
+  }
+
+  /*Inputs*/
+  .field {
+    margin-top: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    gap: .5em;
+    background-color:#fddbe0;
+    border-radius: 4px;
+    padding: .5em 1em;
+    height:30px;
+    width:1000px;
+    margin-right:20px;
+   }
+   
+
+   .input-icon {
+    height: 1.3em;
+    width: 1.3em;
+    fill: #ffe07c;
+   }
+   
+   .input-field {
+    background: none;
+    border: none;
+    outline: none;
+    width: 100%;
+    color:black;
+    font-size: medium;
+   }
+   .qa{
+    background-color:#ff96c4;
+    border-radius:10px;
+    height:200px;
+    width:200px;
+    position:relative;
+
+   }
+   .ans{
+    background-color: #ff96c4;
+    border-radius:10px;
+    margin-top:10px;
+    margin-right:20px;
+    height:200px;
+    font-size:large;
+   }
