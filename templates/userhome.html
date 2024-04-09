@@ -38,17 +38,17 @@
         </div>
         <div class="rec">
             <h3>Recommendations</h3>
-            <div class="row">
-                <h4>Nutrition</h4>
-                <p>Focus on balanced meals with lean proteins, whole grains, and plenty of fruits and vegetables to support weight management and provide essential nutrients.                </p>
+            <div class="row"> 
+                <h4> {{ context["recommendation"][0] }}</h4>
+                <p> {{ context["recommendation"][1] }} </p>
             </div>
             <div class="row">
-                <h4>Exercise</h4>
-                <p>Engage in moderate-intensity activities like brisk walking, cycling, or dancing to burn calories and improve mood.</p>
+                <h4> {{ context["recommendation"][2] }} </h4>
+                <p> {{ context["recommendation"][3] }} </p>
             </div>
             <div class="row">
-                <h4>Hydration</h4>
-                <p>Drink water and herbal teas to stay hydrated and reduce bloating.</p>
+                <h4> {{ context["recommendation"][4] }} </h4>
+                <p> {{ context["recommendation"][5] }} </p>
             </div>
         </div>
     </div>
