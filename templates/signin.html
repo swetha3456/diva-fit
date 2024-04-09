@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">   
+   <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
 
 </head>
 <body style="overflow: scroll;">
     <video class="myVideo"src="{{url_for('static', filename='bg1.mp4')}}" autoplay loop playsinline muted></video>
     <video class="myVideo2"src="{{url_for('static', filename='bg1.mp4')}}" autoplay loop playsinline muted></video>
-    <div class="login"> 
+    <div class="login">
         <div class="card" style="width:700px;">
             <h4 class="title">Sign Up!</h4>
             <form method="post">
@@ -36,37 +36,37 @@
                 <path d="M80 192V144C80 64.47 144.5 0 224 0C303.5 0 368 64.47 368 144V192H384C419.3 192 448 220.7 448 256V448C448 483.3 419.3 512 384 512H64C28.65 512 0 483.3 0 448V256C0 220.7 28.65 192 64 192H80zM144 192H304V144C304 99.82 268.2 64 224 64C179.8 64 144 99.82 144 144V192z"></path></svg>
                 <input autocomplete="off" class="input-field" type="number" id="Age" name="Age" min="13" max="100">
                 </div>
-                <div class="field small">        
+                <div class="field small">
                 <p>Weight:</p>
                 <input autocomplete="off" class="input-field" type="number" id="weight" name="weight" min="20" max="300" >
                 </div>
                 </div>
                 <p>Fitness goals</p>
                 <div class="field">
-                    <input autocomplete="off" class="input-field" name="username" type="text">
+                    <input autocomplete="off" class="input-field" name="goals" type="text">
                 </div>
                 <p>Health conditions</p>
                 <div class="field">
-                    <input autocomplete="off" class="input-field" name="username" type="text">
+                    <input autocomplete="off" class="input-field" name="conditions" type="text">
                 </div>
                 <div class="twofields">
-                    <div class="field small three">        
-                        <p>Period date:</p>
-                        <input autocomplete="off" class="input-field" type="date" >
+                    <div class="field small three">
+                        <p>Next Period:</p>
+                        <input autocomplete="off" class="input-field" name="period-date" type="date" >
                     </div>
-                    <div class="field small three">        
-                        <p>Duration:</p>
-                        <input autocomplete="off" class="input-field" type="number" min="0" max="10" >
+                    <div class="field small three">
+                        <p>Period Duration:</p>
+                        <input autocomplete="off" class="input-field" type="number" name="duration" min="0" max="10" >
                     </div>
-                    <div class="field small three">        
-                        <p>Cycle length:</p>
-                        <input autocomplete="off" class="input-field" type="number" min="0" max="100" >
+                    <div class="field small three">
+                        <p>Cycle Length:</p>
+                        <input autocomplete="off" class="input-field" type="number" name="cycle-length" min="0" max="100" >
                     </div>
                 </div>
                 <div class="field small" style="width:230px;">
                     <p>Difficulty level:</p>
                     <div class="select">
-                        <select>
+                        <select name="difficulty">
                         <option value="1">Easy</option>
                         <option value="2">Medium</option>
                         <option value="3">Hard</option>
