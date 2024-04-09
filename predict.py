@@ -2,22 +2,22 @@ from transformers import BertTokenizer, BertForQuestionAnswering
 import torch
 import nltk
 
-nltk.download('punkt')
-nltk.download('stopwords')
+# nltk.download('punkt')
+# nltk.download('stopwords')
 
-# Load the BERT model and tokenizer
-tokenizer = BertTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
-model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
+# # Load the BERT model and tokenizer
+# tokenizer = BertTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
+# model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
 
 
-model_load_path = 'model.pt'
+# model_load_path = 'model.pt'
 
-# Load the model
-model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')  # Instantiate your model class
-model.load_state_dict(torch.load(model_load_path))
+# # Load the model
+# model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')  # Instantiate your model class
+# model.load_state_dict(torch.load(model_load_path))
 
-# Ensure the model is in evaluation mode
-model.eval()
+# # Ensure the model is in evaluation mode
+# model.eval()
 
 data = [
                  ("I want to improve my strength. What exercises do you recommend?", "Strength training exercises like squats, deadlifts, and bench presses can help you build muscle."),
@@ -153,11 +153,12 @@ exercise_advice = {
     "stretches": "Incorporate a variety of stretches targeting different muscle groups for improved flexibility.",
     "exercise": "Consistency is key; make it a habit to move your body regularly.",
     "exercises": "Consistency is key; make it a habit to move your body regularly.",
+    "exercising": "Consistency is key; make it a habit to move your body regularly.", 
     "workout": "Challenge yourself with different workouts to keep things interesting.",
     "activity": "Find activities you enjoy to make exercise feel like fun, not work.",
     "fitness": "Focus on progress, not perfection, and celebrate your achievements.",
-    "training": "Set specific goals for your training sessions to stay motivated and track progress."
-
+    "training": "Set specific goals for your training sessions to stay motivated and track progress.",
+    "period" : "It's important to listen to your body during your period. Light exercises like walking or gentle yoga can help alleviate discomfort. However, if you're feeling particularly fatigued, it's okay to take a break."
 }
 
 def get_keywords(input_text):
@@ -176,9 +177,10 @@ def get_keywords(input_text):
     for token in filtered_tokens:
         if token.isalpha() and len(token) > 2:
             keywords.append(token)
+
     return keywords
 
-def predict(input_text):
+def predict(input_text, model):
     flag = False
     keywords = get_keywords(input_text)
     for word in keywords:
@@ -188,7 +190,7 @@ def predict(input_text):
     if flag == False:
         return "Please try an exercise related question."
     
-    ans = _predict(input_text)
+    ans = _predict(input_text, model)
 
     keyword_op = ' '.join(exercise_advice[keyword] for keyword in keywords if keyword in exercise_advice)
 
@@ -197,7 +199,7 @@ def predict(input_text):
     else:
         return keyword_op
 
-def _predict(input_text):
+def _predict(input_text, model):
         # Define the input
 
     # Tokenize the input
@@ -231,4 +233,3 @@ def _predict(input_text):
         return None
     
     
-print(predict(input_text = "Recommend the best strength training exercise"))
