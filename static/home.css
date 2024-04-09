@@ -74,6 +74,7 @@ background-size: cover;
     margin:10px;
     width:fit-content;
     height: fit-content;
+    text-wrap:wrap;
     
 }
 h4{
@@ -84,6 +85,7 @@ h4{
 p{
     margin-block-start: 0px;
     margin-block-end: 0px;
+    
 }
 .chart{
     background-color: #fddbe0;
