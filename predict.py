@@ -180,14 +180,46 @@ def get_keywords(input_text):
 
     return keywords
 
+def age_related(age):
+    if age < 12:
+        return "Children should engage in a variety of physical activities including running, jumping, climbing, biking, and playing sports to develop motor skills, strength, and coordination."
+    elif age >= 12 and age < 19:
+        return "Teenagers can participate in team sports, individual sports, strength training, yoga, and other activities to stay active and healthy during their adolescent years."
+    elif age >= 19 and age < 30:
+        return "In your 20s, you can focus on a variety of exercises including strength training, cardio (such as running, cycling, or swimming), HIIT workouts, and flexibility training to improve overall fitness."
+    elif age >= 30 and age < 40:
+        return "In your 30s, prioritizing regular physical activity such as brisk walking, jogging, dancing, or group fitness classes can help boost energy levels and improve mood."
+    elif age >= 40 and age < 50:
+        return "In your 40s, incorporating a mix of strength training, cardiovascular exercise, yoga, and flexibility exercises can help combat the effects of aging and maintain overall health."
+    elif age >= 50 and age < 60:
+        return "Low-impact exercises like swimming, cycling, walking, tai chi, and yoga are gentle on the joints and can help relieve joint pain and stiffness."
+    elif age >= 60 and age < 70:
+        return "Seniors can benefit from activities like walking, water aerobics, gentle yoga, tai chi, and resistance training using light weights or resistance bands to maintain mobility, strength, and balance."
+    elif age >= 70 and age < 80:
+        return "For seniors with mobility issues, chair exercises, gentle stretching, seated yoga, and aquatic therapy can provide safe and effective ways to stay active and maintain functional mobility."
+    elif age >= 80 and age < 90:
+        return "In your 80s, focusing on exercises that improve balance, strength, and flexibility, such as seated exercises, balance drills, and light resistance training, can help maintain independence and reduce the risk of falls."
+    elif age >= 90:
+        return "For individuals in their 90s, gentle movements like seated stretches, chair yoga, and breathing exercises can promote circulation, maintain range of motion, and contribute to overall well-being."
+
+
 def predict(input_text, model):
     flag = False
+
+    for x in input_text.split():
+        if x.isdigit() or x.strip('s').isdigit() or x.strip('.').isdigit() or x.strip(',').isdigit():
+            x = x.strip('s')
+            x = x.strip(',')
+            x = x.strip('.')
+            age = age_related(int(x))
+        else:
+            age = ''
     keywords = get_keywords(input_text)
     for word in keywords:
         if word in exercise_advice:
             flag = True
             break
-    if flag == False:
+    if flag == False and age == '':
         return "Please try an exercise related question."
     
     ans = _predict(input_text, model)
@@ -195,9 +227,9 @@ def predict(input_text, model):
     keyword_op = ' '.join(exercise_advice[keyword] for keyword in keywords if keyword in exercise_advice)
 
     if ans is not None:
-        return ans + ' ' + keyword_op
+        return age + ans + ' ' + keyword_op
     else:
-        return keyword_op
+        return age + keyword_op
 
 def _predict(input_text, model):
         # Define the input
