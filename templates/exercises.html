@@ -9,10 +9,10 @@
         <div class="logo">Diva-Fit</div>
         <div>
             <li class="links">
-                <ul class="item" href="/home">Home</ul>
-                <ul class="item">Start workout</ul>
-                <ul class="item">Calendar</ul>
-                <ul class="item">About</ul>
+                <ul class="item"><a href="{{ url_for('home') }}">Home</a></ul>
+                <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
+                <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
+                <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
             </li>
         </div>
     </div>
@@ -21,7 +21,13 @@
             <div class="face">
                <h3>Curl Count</h3>
                <p>Curl count is a strength training exercise that involves curling weights, typically dumbbells, to work the biceps muscles</p> 
-               <button class="btn" type="submit" value="curl-count">Start Workout</button>
+               <button class="btn" type="submit" value="curl-count" onclick="redirectCurls()">Start Workout</button>
+               <script>
+                function redirectCurls() {
+                    console.log("");
+                    window.location.href = "{{ url_for('exercise_curl') }}";
+                }
+            </script>
             </div>
             <div class="info">
                 <img src="{{url_for('static', filename='curl.png')}}">
@@ -32,8 +38,13 @@
             <div class="face">
                 <h3>High Knees</h3>
                 <p>High knees is a cardiovascular exercise where you rapidly lift your knees towards your chest alternately, promoting agility and engaging multiple muscle groups including the core and hip flexors.</p>
-                <button class="btn" type="submit" value="high-knees">Start Workout</button>
-
+                <button class="btn" type="submit" value="high-knees" onclick="redirectHighKnees()">Start Workout</button>
+                <script>
+                    function redirectHighKnees() {
+                        console.log("");
+                        window.location.href = "{{ url_for('exercise_high_knees') }}";
+                    }
+                </script>
             </div>
             <div class="info">
                 <img src="{{url_for('static', filename='high.png')}}">
@@ -43,12 +54,21 @@
 
         <div class="card">
             <div class="face">
-                
+               <h3>Toe Touches</h3>
+               <p>
+                Toe touches are a bodyweight exercise that strengthens your core and improves flexibility by bending at the hips and reaching towards your toes.</p> 
+               <button class="btn" type="submit" value="curl-count" onclick="redirectToes()">Start Workout</button>
+               <script>
+                function redirectToes() {
+                    console.log("");
+                    window.location.href = "{{ url_for('exercise_toe_touch') }}";
+                }
+            </script>
             </div>
             <div class="info">
-                
+                <img src="{{url_for('static', filename='curl.png')}}">
             </div>
-        </div>  
+        </div> 
 
     </div>
 </body>
