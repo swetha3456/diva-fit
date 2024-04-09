@@ -23,6 +23,9 @@ background-size: cover;
   font-style: normal;
   font-size:50px;
     padding-left:30px;
+    -webkit-text-stroke-color:#fe70ae;
+    -webkit-text-stroke-width:5px;
+  letter-spacing:1.5px;
 }
 .navbar{
    display: flex;
@@ -64,6 +67,26 @@ background-size: cover;
     margin-top:30px;
 }
 
+.row{
+    background-color: #ff96c4;
+    border-radius:20px;
+    padding:10px;
+    margin:10px;
+    width:fit-content;
+    height: fit-content;
+    text-wrap:wrap;
+    
+}
+h4{
+    color: #823473;
+    margin-block-start: 0px;
+    margin-block-end: 0px; 
+}
+p{
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    
+}
 .chart{
     background-color: #fddbe0;
     width:340px;

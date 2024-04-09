@@ -12,6 +12,10 @@ app = Flask(__name__)
 app.secret_key = b"030a8ee0eb274b3e7fd9db490b0fd6a532b1fa1f1fd6825c5852c7363358c4b6"
 socketio = SocketIO(app)
 
+exercise_thread = None
+current_exercise = None
+
+
 @app.route("/")
 def about():
     return render_template("about.html")
@@ -80,18 +84,51 @@ def register():
 
 which_exercise = None
 
+# @app.route('/exercise/curl_count')
+# def exercise_curl():
+#     curl_thread = threading.Thread(target=curl_count)
+#     curl_thread.start()
+#     return render_template('curl_exercise.html')
+
+# @app.route('/exercise/high_knees')
+# def exercise_high_knees():
+#     high_knees_thread = threading.Thread(target=high_knee_count)
+#     high_knees_thread.start()
+#     return render_template('high_knee_exercise.html')
+
+
+
+# Route for curl exercise
 @app.route('/exercise/curl_count')
 def exercise_curl():
-    curl_thread = threading.Thread(target=curl_count)
-    curl_thread.start()
+    global exercise_thread, current_exercise
+
+    # Stop the previous exercise thread if running
+    if exercise_thread and exercise_thread.is_alive():
+        exercise_thread.join()
+
+    # Start new thread for curl exercise
+    exercise_thread = threading.Thread(target=curl_count)
+    exercise_thread.start()
+    current_exercise = 'curl_count'
+
     return render_template('curl_exercise.html')
 
+# Route for high knees exercise
 @app.route('/exercise/high_knees')
 def exercise_high_knees():
-    high_knees_thread = threading.Thread(target=high_knee_count)
-    high_knees_thread.start()
-    return render_template('high_knee_exercise.html')
+    global exercise_thread, current_exercise
 
+    # Stop the previous exercise thread if running
+    if exercise_thread and exercise_thread.is_alive():
+        exercise_thread.join()
+
+    # Start new thread for high knees exercise
+    exercise_thread = threading.Thread(target=high_knee_count)
+    exercise_thread.start()
+    current_exercise = 'high_knees'
+
+    return render_template('high_knee_exercise.html')
 
 def curl_count():
     counter = 0
