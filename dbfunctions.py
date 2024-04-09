@@ -13,7 +13,12 @@ def init_db():
 def authenticate_user(username, password):
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
-    expected_password = list(cursor.execute(f"select password from users where username='{username}';"))[0][0]
+
+    try:
+        expected_password = list(cursor.execute(f"select password from users where username='{username}';"))[0][0]
+    except:
+        return False
+    
     conn.close()
     return password == expected_password
 
@@ -39,9 +44,7 @@ def register_user(context):
     conn.close()
 
 def get_details(username):
-    command = f"""select age, next_period_start_date - date(), avg_cycle_length, 
-    avg_period_duration, fitness_goals from users where username='{username}';"
-    """
+    command = f"select age, julianday(next_period_start_date) - julianday('now'), avg_cycle_length, avg_period_duration, fitness_goals from users where username='{username}';"
 
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -68,19 +71,19 @@ def get_details(username):
     return age_group, phase, goals
 
 def days_left(username):
-    command = f"select next_period_start_date - date(), avg_cycle_length from users where username='{username}'"
+    command = f"select julianday(next_period_start_date) - julianday('now'), avg_cycle_length from users where username='{username}'"
 
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
     output = list(cursor.execute(command))[0]
-    num_days = output[0]
+    print(output)
+    num_days = int(output[0])
     cycle_length = output[1]
 
     while num_days < 0:
         num_days += cycle_length
 
     return num_days, num_days / cycle_length * 100    
-
 
 if __name__ == "__main__":
     init_db()
