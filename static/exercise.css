@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
+body{
+   
+    font-size: medium;
+    font-family: "Lilita One", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  margin: 0px;
+  background-color: #F5CDC5;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23EB9BA2' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23F5CDC5' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23f5cac2' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f4c7c0' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f4c4bd' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f3c1bb' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23f3beb8' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23f2bcb6' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23f2b9b4' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23f1b6b2' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23f1b3b0' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23f0b0ae' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23efadac' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23efaaaa' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23eea7a8' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23eda4a7' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23eda1a5' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23ec9ea3' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23EB9BA2' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.logo{
+    font-family: "Titan One", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size:50px;
+    padding-left:30px;
+    -webkit-text-stroke-color:#EB9BA2;
+    -webkit-text-stroke-width:5px;
+  letter-spacing:1.5px;
+}
+.navbar{
+   display: flex;
+   align-items: center;
+   color: beige;
+   background-color:  #8c4f75;
+   padding: 15px;
+   justify-content: space-between;
+
+   
+}
+.links{
+    display: flex;
+    padding-right:200px;
+    font-size: large;
+    font-weight: 100;
+}
+.item:hover{
+    color: #EB9BA2;
+    cursor:pointer;
+}
+
+
+.cardholder{
+   display: flex; 
+   flex-wrap: wrap;
+   justify-content: center;
+}
+.card{
+    height:400px;
+    width: 600px;
+    background-color: #8c4f75;
+    margin:20px;
+    border-radius:10px;
+    display:flex;
+}
+.face{
+    height:360px;
+    width:300px;
+    background-color: #F5CDC5;
+    border-radius:10px;
+    margin:20px;
+}
+img{
+    width:150px;
+    height:300px;
+    margin: 30px;
+
+}
+.face p{
+    font-weight:100;
+    font-size: medium;
+    padding:30px;
+    color: #8c4f75;
+    padding-top:10px;
+
+}
+.face h3{
+    font-weight:150;
+    text-align: center;
+    padding:10px;
+    font-size: xx-large;
+    color: #f16773;
+}
+   
+   /*Buttons*/
+   .btn {
+    margin-left: 3rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    padding: 0.6em 1.2em;
+    background-color: #8c4f75;
+    color: #ffe07c;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+    transition: all .3s ease-in-out;
+   }
+   
+   .btn-link {
+    color:#800080;
+    display: block;
+    font-size: .75em;
+    transition: color .3s ease-out;
+   }
+   
+   /*Hover & focus*/
+   .field input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+   .btn:hover {
+    background-color: #5e6681;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+   }
+   
+   .btn-link:hover {
+    color: #ffeba7;
+   }

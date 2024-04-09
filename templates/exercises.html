@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="{{url_for('static', filename='exercise.css')}}">   
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Diva-Fit</div>
+        <div>
+            <li class="links">
+                <ul class="item" href="/home">Home</ul>
+                <ul class="item">Start workout</ul>
+                <ul class="item">Calendar</ul>
+                <ul class="item">About</ul>
+            </li>
+        </div>
+    </div>
+    <div class="cardholder">
+        <div class="card">
+            <div class="face">
+               <h3>Curl Count</h3>
+               <p>Curl count is a strength training exercise that involves curling weights, typically dumbbells, to work the biceps muscles</p> 
+               <button class="btn" type="submit" value="curl-count">Start Workout</button>
+            </div>
+            <div class="info">
+                <img src="{{url_for('static', filename='curl.png')}}">
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="face">
+                <h3>High Knees</h3>
+                <p>High knees is a cardiovascular exercise where you rapidly lift your knees towards your chest alternately, promoting agility and engaging multiple muscle groups including the core and hip flexors.</p>
+                <button class="btn" type="submit" value="high-knees">Start Workout</button>
+
+            </div>
+            <div class="info">
+                <img src="{{url_for('static', filename='high.png')}}">
+
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="face">
+                
+            </div>
+            <div class="info">
+                
+            </div>
+        </div>  
+
+    </div>
+</body>
+</html>

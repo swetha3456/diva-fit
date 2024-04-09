@@ -18,22 +18,19 @@
         </div>
     </div>
     <!-- body1 -->
-    <!-- <style>
+    <style>
         :root {
             --per-parameter: {{context["percentage"]}};
         }
 
         /* Use the CSS variable in your CSS rules */
-        .pie animate {
-            --p: var(--per-parameter);
-            /* Other CSS properties */
-        }
-    </style> -->
+
+    </style>
     <div class="up">
         <div class="chart">
             <h3>Period Tracker</h3>
 
-            <div class="pie animate" style="--p:90;--c:#ff96c4;">{{ context["num_days_left"] }} days left</div>
+            <div class="pie animate" style="--p:var(--per-parameter);--c:#EB9BA2;">{{ context["num_days_left"] }} days left</div>
 
         </div>
         <div class="rec">
@@ -58,7 +55,6 @@
             <input autocomplete="off" placeholder="Ask your questions here"  class="input-field" name="question" type="text">
             </div>
             <div class="ans">
-                Answer
             </div>
         </div>
         <div class="qa">
