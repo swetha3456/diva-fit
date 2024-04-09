@@ -9,7 +9,7 @@ body{
    
     font-size: medium;
     font-family: "Lilita One", sans-serif;
-  font-weight: 900;
+  font-weight: 100;
   font-style: normal;
   margin: 0px;
   background-color: #CB438D;
@@ -43,6 +43,25 @@ background-size: cover;
 .item:hover{
     color: #ff96c4;
     cursor:pointer;
+}
+
+.up{
+    display: flex;
+}
+.up h3{
+    color: #823473;
+    font-size: x-large;
+}
+.rec{
+    color:rgb(74, 71, 73);
+    background-color: #fddbe0;
+    height: max-content;
+    padding:30px;
+    border-radius:20px;
+    border-style: solid;
+    border-color: #823473;
+    border-width: 20px;
+    margin-top:30px;
 }
 
 .chart{
