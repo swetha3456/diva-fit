@@ -1,12 +1,35 @@
 from flask import Flask, render_template, session, url_for, redirect, request, flash
 from dbfunctions import *
 from recommendations import get_recommendation
+from predict import predict
 from flask_socketio import SocketIO
 import cv2
 import threading
 import exercise_fns
 import base64
 import numpy as np
+from transformers import BertTokenizer, BertForQuestionAnswering
+import torch
+import nltk
+
+nltk.download('punkt')
+nltk.download('stopwords')
+
+
+# Load the BERT model and tokenizer
+tokenizer = BertTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
+model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
+
+
+model_load_path = 'model.pt'
+
+# Load the model
+model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')  # Instantiate your model class
+model.load_state_dict(torch.load(model_load_path))
+
+# Ensure the model is in evaluation mode
+model.eval()
+
 
 app = Flask(__name__)
 app.secret_key = b"030a8ee0eb274b3e7fd9db490b0fd6a532b1fa1f1fd6825c5852c7363358c4b6"
@@ -20,11 +43,15 @@ current_exercise = None
 def about():
     return render_template("about.html")
 
-@app.route("/home")
+@app.route("/home", methods = ["GET", "POST"])
 def home():
-    print(session["username"])
-    if "username" not in session:
-        return redirect(url_for("login"))
+    if request.method == "POST":
+        question = request.form["question"]
+        answer = predict(question, model)
+    else:
+        if "username" not in session:
+            return redirect(url_for("login"))
+        question = answer = ""
     
     pie_chart_info = days_left(session["username"])
     age_group, phase, goal = get_details(session["username"])
@@ -35,7 +62,7 @@ def home():
         "percentage" : pie_chart_info[1]
     }
 
-    return render_template("userhome.html", context=context)
+    return render_template("userhome.html", context=context, question=question, answer=answer)
 
 @app.route("/calendar")
 def calendar():
@@ -82,6 +109,20 @@ def register():
         return redirect(url_for("home"))
 
     return render_template("signin.html")
+
+which_exercise = None
+
+# @app.route('/exercise/curl_count')
+# def exercise_curl():
+#     curl_thread = threading.Thread(target=curl_count)
+#     curl_thread.start()
+#     return render_template('curl_exercise.html')
+
+# @app.route('/exercise/high_knees')
+# def exercise_high_knees():
+#     high_knees_thread = threading.Thread(target=high_knee_count)
+#     high_knees_thread.start()
+#     return render_template('high_knee_exercise.html')
 
 
 

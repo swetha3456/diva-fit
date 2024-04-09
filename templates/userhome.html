@@ -51,16 +51,17 @@
     </div>
     <div class="down">
         <div class="que">
-            <div class="field">
-            <input autocomplete="off" placeholder="Ask your questions here"  class="input-field" name="question" type="text">
-            </div>
-            <div class="ans">
-            </div>
+          <div class="field">
+            <form method="POST">
+              <input autocomplete="off" placeholder="Ask your questions here" class="input-field" name="question" type="text">
+              <button type="submit">Ask</button>
+            </form>
+          </div>
+          <div class="ans">
+            Answer: {{ answer }}
+          </div>
         </div>
-        <div class="qa">
-            <p></p>
-        </div>
-    </div>
+      </div>
 
     
 
