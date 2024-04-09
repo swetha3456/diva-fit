@@ -41,6 +41,11 @@ background-size: cover;
     color: #EB9BA2;
     cursor:pointer;
 }
+.links a {
+    /* Inherits styles from .links */
+    text-decoration: none; /* This line removes the underline */
+    color: inherit;
+}
 
 
 .cardholder{
