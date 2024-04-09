@@ -22,9 +22,11 @@ def calculate_angle(a,b,c):
         
     return angle 
 
+number_of_reps = 20
+
 ## Setup mediapipe instance
 with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as pose:
-    while cap.isOpened():
+    while cap.isOpened() and counter < number_of_reps:
         ret, frame = cap.read()
         
         # Recolor image to RGB
@@ -74,7 +76,7 @@ with mp_pose.Pose(min_detection_confidence=0.5, min_tracking_confidence=0.5) as 
         # Rep data
         cv2.putText(image, 'REPS', (15,12), 
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0,0,0), 1, cv2.LINE_AA)
-        cv2.putText(image, str(counter), 
+        cv2.putText(image, str(counter) + '/' + str(number_of_reps), 
                     (10,60), 
                     cv2.FONT_HERSHEY_SIMPLEX, 2, (255,255,255), 2, cv2.LINE_AA)
         
