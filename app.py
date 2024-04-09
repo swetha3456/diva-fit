@@ -22,6 +22,7 @@ def about():
 
 @app.route("/home")
 def home():
+    print(session["username"])
     if "username" not in session:
         return redirect(url_for("login"))
     
