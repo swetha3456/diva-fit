@@ -106,10 +106,12 @@ def predict(input_text):
     # Get the predicted label
     prediction = output[0].argmax(dim=1).item()
 
-    # Print the output
     if prediction == 0:
-        print("Question: {}".format(input_text))
-    else:
-        print("Answer: {}".format(answers[prediction - 1]))
+        return None
 
+    try:
+        return answers[prediction - 1]
+    except:
+        return None
+    
 predict(input_text = "What are some exercises I can do to improve my posture?")
