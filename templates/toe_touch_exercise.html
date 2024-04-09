@@ -9,7 +9,12 @@
 </head>
 <body>
     <img id="toe_touch_counter" src="" alt="Video Feed" style="width: 400px; height: auto;">
-
+    <!-- Additional video element for curls.mp4 -->
+    <video width="400" height="auto" controls loop>
+        <source src="/static/toe_touch.mp4" type="video/mp4" >
+        Your browser does not support the video tag.
+    </video>
+    
     <script>
         var socket = io.connect('http://' + document.domain + ':' + location.port);
 

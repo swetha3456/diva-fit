@@ -136,58 +136,88 @@ which_exercise = None
 
 
 
-# Route for curl exercise
+# # Route for curl exercise
+# @app.route('/exercise/curl_count')
+# def exercise_curl():
+#     global exercise_thread, current_exercise
+
+#     # Stop the previous exercise thread if running
+#     if exercise_thread and exercise_thread.is_alive():
+#         exercise_thread.join()
+
+#     # Start new thread for curl exercise
+#     exercise_thread = threading.Thread(target=curl_count)
+#     exercise_thread.start()
+#     current_exercise = 'curl_count'
+
+#     return render_template('curl_exercise.html')
+
+# # Route for high knees exercise
+# @app.route('/exercise/high_knees')
+# def exercise_high_knees():
+#     global exercise_thread, current_exercise
+
+#     # Stop the previous exercise thread if running
+#     if exercise_thread and exercise_thread.is_alive():
+#         exercise_thread.join()
+
+#     # Start new thread for high knees exercise
+#     exercise_thread = threading.Thread(target=high_knee_count)
+#     exercise_thread.start()
+#     current_exercise = 'high_knees'
+
+#     return render_template('high_knee_exercise.html')
+
+# # Route for high knees exercise
+# @app.route('/exercise/toe_touch')
+# def exercise_toe_touch():
+#     global exercise_thread, current_exercise
+
+#     # Stop the previous exercise thread if running
+#     if exercise_thread and exercise_thread.is_alive():
+#         exercise_thread.join()
+
+#     # Start new thread for high knees exercise
+#     exercise_thread = threading.Thread(target=toe_touch_count)
+#     exercise_thread.start()
+#     current_exercise = 'toe touch'
+
+#     return render_template('toe_touch_exercise.html')
+
+exercise_thread = None
+current_exercise = None
+cap = None  # Global variable to hold the camera capture object
+
+def start_exercise_thread(target_func):
+    global exercise_thread, cap
+    if cap:
+        cap.release()  # Release the camera capture object if it exists
+        cv2.destroyAllWindows()  # Close all OpenCV windows
+    if exercise_thread and exercise_thread.is_alive():
+        exercise_thread.join()
+    exercise_thread = threading.Thread(target=target_func)
+    exercise_thread.start()
+
 @app.route('/exercise/curl_count')
 def exercise_curl():
-    global exercise_thread, current_exercise
-
-    # Stop the previous exercise thread if running
-    if exercise_thread and exercise_thread.is_alive():
-        exercise_thread.join()
-
-    # Start new thread for curl exercise
-    exercise_thread = threading.Thread(target=curl_count)
-    exercise_thread.start()
-    current_exercise = 'curl_count'
-
+    start_exercise_thread(curl_count)
     return render_template('curl_exercise.html')
 
-# Route for high knees exercise
 @app.route('/exercise/high_knees')
 def exercise_high_knees():
-    global exercise_thread, current_exercise
-
-    # Stop the previous exercise thread if running
-    if exercise_thread and exercise_thread.is_alive():
-        exercise_thread.join()
-
-    # Start new thread for high knees exercise
-    exercise_thread = threading.Thread(target=high_knee_count)
-    exercise_thread.start()
-    current_exercise = 'high_knees'
-
+    start_exercise_thread(high_knee_count)
     return render_template('high_knee_exercise.html')
 
-# Route for high knees exercise
 @app.route('/exercise/toe_touch')
 def exercise_toe_touch():
-    global exercise_thread, current_exercise
-
-    # Stop the previous exercise thread if running
-    if exercise_thread and exercise_thread.is_alive():
-        exercise_thread.join()
-
-    # Start new thread for high knees exercise
-    exercise_thread = threading.Thread(target=toe_touch_count)
-    exercise_thread.start()
-    current_exercise = 'toe touch'
-
+    start_exercise_thread(toe_touch_count)
     return render_template('toe_touch_exercise.html')
 
 
 def curl_count():
     counter = 0
     number_of_reps = 5
+    global cap
     cap = cv2.VideoCapture(0)
     stage = None
     while counter < number_of_reps:
@@ -239,6 +269,7 @@ def curl_count():
 def high_knee_count():
     counter = 0
     number_of_reps = 5
+    global cap
     cap = cv2.VideoCapture(0)
     stage = None
 
@@ -294,6 +325,7 @@ def high_knee_count():
 def toe_touch_count():
     counter = 0
     number_of_reps = 5
+    global cap
     cap = cv2.VideoCapture(0)
     stage = None
     while counter < number_of_reps:
