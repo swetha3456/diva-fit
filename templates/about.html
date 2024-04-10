@@ -80,7 +80,6 @@
                 <ul class="item"><a href="{{ url_for('home') }}">Home</a></ul>
                 <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
                 <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
-                <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
                 <ul class="item"><a href="{{ url_for('vaccine') }}">Vaccines</a></ul>
             </li>
         </div>
@@ -91,8 +90,13 @@
         <div class="tag">
         <h1>DivaFit</h1>
         <p>Your personal health coach </p>
-        <button class="btn" type="submit" value="Login">Login</button>
-
+        <button class="btn" type="submit" value="Login" onclick="redirectLogin()">Login</button>
+        <script>
+          function redirectLogin(){
+              console.log("");
+              window.location.href = "{{ url_for('login') }}";
+          }
+      </script>
         </div>
 
     </div>
