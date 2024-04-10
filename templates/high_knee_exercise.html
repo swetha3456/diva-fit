@@ -3,17 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Streaming</title>
+    <title>High Knees</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/3.0.3/socket.io.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="{{url_for('static', filename='workout.css')}}"> 
 </head>
 <body>
-    <img id="high_knee_counter" src="" alt="Video Feed" style="width: 400px; height: auto;">
+    <div class="cam">
+    <img id="curl_counter" src="" alt="Video Feed" style="width: 400px; height: auto;">
+</div>
     <!-- Additional video element for curls.mp4 -->
+    <div class="vid">
     <video width="400" height="auto" controls loop>
         <source src="/static/high_knees.mp4" type="video/mp4" >
         Your browser does not support the video tag.
     </video>
+    </div>
 
     <script>
         var socket = io.connect('http://' + document.domain + ':' + location.port);
