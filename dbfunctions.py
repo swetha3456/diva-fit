@@ -44,7 +44,7 @@ def register_user(context):
     conn.close()
 
 def get_details(username):
-    command = f"select age, julianday(next_period_start_date) - julianday('now'), avg_cycle_length, avg_period_duration, fitness_goals from users where username='{username}';"
+    command = f"select age, julianday(next_period_start_date) - julianday('now') + 1, avg_cycle_length, avg_period_duration, fitness_goals from users where username='{username}';"
 
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
@@ -71,7 +71,7 @@ def get_details(username):
     return age_group, phase, goals
 
 def days_left(username):
-    command = f"select julianday(next_period_start_date) - julianday('now'), avg_cycle_length from users where username='{username}'"
+    command = f"select julianday(next_period_start_date) - julianday('now') + 1, avg_cycle_length from users where username='{username}'"
 
     conn = sqlite3.connect("database.db")
     cursor = conn.cursor()
