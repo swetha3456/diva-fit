@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="{{url_for('static', filename='health.css')}}">   
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Diva-Fit</div>
+        <div>
+            <li class="links">
+                <ul class="item"><a href="{{ url_for('home') }}">Home</a></ul>
+                <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
+                <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
+                <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
+                <ul class="item"><a href="{{ url_for('health') }}">Health Check Up</a></ul>
+            </li>
+        </div>
+    </div>
+    <div class="cardhold">
+        <div class="card">
+            <h3>Well-Child Visits</h3>
+            <label class="container">
+                <input   type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Regular visits to a pediatrician or healthcare provider for comprehensive check-ups and growth monitoring.</p>
+        </div>
+        <div class="card">
+            <h3>Gynecological Health Screenings</h3>
+            <label class="container">
+                <input   type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Screenings for reproductive health issues including menstrual irregularities.</p>
+        </div>
+        <div class="card">
+            <h3>Bone Health Assessment</h3>
+            <label class="container">
+                <input   type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Evaluation of bone health, especially for adolescent girls, to monitor for osteoporosis or vitamin D deficiency.</p>
+        </div>
+    </div>
+</body>
+</html>

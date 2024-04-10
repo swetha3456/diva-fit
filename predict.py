@@ -40,7 +40,10 @@ data = [
      "Teenagers can participate in team sports, individual sports, strength training, yoga, and other activities to stay active and healthy during their adolescent years."),
     
     ("I'm in my 20s and want to improve my fitness. What exercises do you recommend?", 
-     "In your 20s, you can focus on a variety of exercises including strength training, cardio (such as running, cycling, or swimming), HIIT workouts, and flexibility training to improve overall fitness.")
+     "In your 20s, you can focus on a variety of exercises including strength training, cardio (such as running, cycling, or swimming), HIIT workouts, and flexibility training to improve overall fitness."),
+         ("I'm trying to lose weight. What types of exercises are best for burning calories?", "Cardiovascular exercises like running, cycling, and HIIT workouts are effective for burning calories. Additionally, incorporating strength training exercises can help increase muscle mass and boost metabolism."),
+    ("I suffer from back pain. What exercises can I do to alleviate it?", "Exercises such as gentle yoga, Pilates, and core strengthening exercises can help alleviate back pain by improving posture and strengthening the muscles that support the spine."),
+    ("I have limited time for exercise. What are some effective quick workouts?", "High-intensity interval training (HIIT) workouts are great for maximizing calorie burn in a short amount of time. Tabata workouts, circuit training, and bodyweight exercises like burpees and jumping jacks can also provide a quick and effective workout.")
 ]
 
 questions = [item[0] for item in data]
@@ -158,7 +161,8 @@ exercise_advice = {
     "activity": "Find activities you enjoy to make exercise feel like fun, not work.",
     "fitness": "Focus on progress, not perfection, and celebrate your achievements.",
     "training": "Set specific goals for your training sessions to stay motivated and track progress.",
-    "period" : "It's important to listen to your body during your period. Light exercises like walking or gentle yoga can help alleviate discomfort. However, if you're feeling particularly fatigued, it's okay to take a break."
+    "period" : "It's important to listen to your body during your period. Light exercises like walking or gentle yoga can help alleviate discomfort. However, if you're feeling particularly fatigued, it's okay to take a break.",
+    "pain": "It's important to be cautious whiel exercising. If facing any pain, consult a doctor before continuing any exercises."
 }
 
 def get_keywords(input_text):

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="{{url_for('static', filename='vaccine.css')}}">   
+   <link rel="stylesheet" href="{{url_for('static', filename='health.css')}}">   
 
 </head>
 <body>
@@ -13,60 +13,51 @@
                 <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
                 <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
                 <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
-                <ul class="item"><a href="{{ url_for('vaccine') }}">Vaccines</a></ul>
+                <ul class="item"><a href="{{ url_for('health') }}">Health Check Up</a></ul>
             </li>
         </div>
     </div>
     <div class="cardhold">
         <div class="card">
-            <h3>Influenza Vaccine</h3>
-            <label class="container">
-                <input   type="checkbox">
-                <div class="checkmark"></div>
-              </label>
-            <p>Recommended annually for all adults, especially those with underlying health conditions.</p>
-        </div>
-        <div class="card">
-            <h3>Td Vaccine (Tetanus, Diphtheria)</h3>
+            <h3>Bone Density Testing (DEXA Scan)</h3>
             <label class="container">
                 <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Booster doses recommended every 10 years.</p>
+            <p>Regular bone density tests are crucial for assessing bone health and detecting osteoporosis</p>
         </div>
         <div class="card">
-            <h3>Tdap Vaccine (Tetanus, Diphtheria, Pertussis)</h3>
+            <h3>Breast Cancer Screening (Mammogram)</h3>
             <label class="container">
                 <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Recommended during each pregnancy and for adults who have not previously received it.</p>
+            <p>Regular mammograms are essential for early detection of breast cancer, as the risk increases with age.</p>
         </div>
         <div class="card">
-            <h3>HPV Vaccine</h3>
+            <h3>Cardiovascular Health Screening</h3>
             <label class="container">
                 <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Catch-up vaccination recommended for females aged 27-45 years who have not been previously vaccinated.</p>
+            <p>Comprehensive cardiovascular assessments, including cholesterol levels help monitor heart health.</p>
         </div>
         <div class="card">
-            <h3>MMR Vaccine</h3>
+            <h3>Colorectal Cancer Screening</h3>
             <label class="container">
                 <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Catch-up vaccination recommended for women born after 1957 who have not received two doses.</p>
+            <p>Regular screenings for colorectal cancer, such as colonoscopy or fecal occult blood tests.</p>
         </div>
         <div class="card">
-            <h3>Varicella Vaccine</h3>
+            <h3>Pelvic Health Evaluation</h3>
             <label class="container">
                 <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Catch-up vaccination recommended for adults who have not had chickenpox or received the vaccine.</p>
+            <p>Postmenopausal women should undergo regular pelvic exams.</p>
         </div>
-
     </div>
 </body>
 </html>

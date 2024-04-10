@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <link rel="stylesheet" href="{{url_for('static', filename='vaccine.css')}}">   
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">Diva-Fit</div>
+        <div>
+            <li class="links">
+                <ul class="item"><a href="{{ url_for('home') }}">Home</a></ul>
+                <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
+                <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
+                <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
+                <ul class="item"><a href="{{ url_for('vaccine') }}">Vaccines</a></ul>
+                <ul class="item"><a href="{{ url_for('health') }}">Health Check Up</a></ul>
+
+            </li>
+        </div>
+    </div>
+    <div class="cardhold">
+        <div class="card">
+            <h3>Flu Vaccine</h3>
+            <label class="container">
+                <input type="checkbox">
+                <div class="checkmark"></div>
+              </label>
+            <p>Continue to receive annually.</p>
+        </div>
+        <div class="card">
+            <h3>Pneumococcal Vaccine</h3>
+            <label class="container">
+                <input type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Recommended for adults aged 65 and older, or younger adults with certain medical conditions.</p>
+        </div>
+        <div class="card">
+            <h3>Shingles Vaccine (Herpes Zoster)</h3>
+            <label class="container">
+                <input type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Recommended for adults aged 50 and older.</p>
+        </div>
+        <div class="card">
+            <h3>HPV Vaccine</h3>
+            <label class="container">
+                <input type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Consideration for catch-up vaccination in women aged 27-45 years who have not been previously vaccinated.</p>
+        </div>
+    </div>
+</body>
+</html>
