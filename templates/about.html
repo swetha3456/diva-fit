@@ -90,8 +90,13 @@
         <div class="tag">
         <h1>DivaFit</h1>
         <p>Your personal health coach </p>
-        <button class="btn" type="submit" value="Login">Login</button>
-
+        <button class="btn" type="submit" value="Login" onclick="redirectLogin()">Login</button>
+        <script>
+          function redirectLogin(){
+              console.log("");
+              window.location.href = "{{ url_for('login') }}";
+          }
+      </script>
         </div>
 
     </div>
