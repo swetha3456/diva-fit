@@ -145,9 +145,9 @@ background-size: cover;
  .btn {
     margin-left: 0.7rem;
     border: none;
-    border-radius: 4px;
+    border-radius: 80px;
     font-weight: bold;
-    font-size: 1.0em;
+    font-size: 0.8em;
     text-transform: uppercase;
     padding: 0.6em 1.2em;
     background-color: #8c4f75;
@@ -155,6 +155,9 @@ background-size: cover;
     box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
     transition: all .3s ease-in-out;
     left:-10px;
+    font-family: "Analogue Reduced 65 Medium";
+
+
    }
    
    .btn-link {
@@ -207,4 +210,22 @@ background-size: cover;
     height:500px;
     width:500px;
     margin:30px;
+}
+.block h3{
+    font-family: "Lilita One", sans-serif;
+    font-size: x-large;
+    text-align: center;
+    color: #040404;
+    margin:5px;
+    font-weight: 100;
+    padding: 10px;
+}
+.block p{
+    font-family: "Lilita One", sans-serif;
+    font-size:medium;
+    text-align: center;
+    color:#F5CDC5;
+    margin:5px;
+    font-weight: 100;
+    padding: 10px;   
 }
