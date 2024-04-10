@@ -1,5 +1,13 @@
 def get_recommendation(phase, age_group, fitness_goal):
-    if phase == 'menstrual':
+    if fitness_goal not in ["lose weight", "gain weight", "gain strength"]:
+        subhead1 = "Balance and Coordination"
+        text1 = "Activities like tai chi, yoga, or balance exercises can improve balance and coordination, reducing the risk of falls and promoting overall stability."
+        subhead2 = "Flexibility"
+        text2 = "Regular stretching can improve flexibility and range of motion, making daily activities easier and reducing pain. Focus on gentle stretches that target major muscle groups."
+        subhead3 = "Low-Impact Strength Training"
+        text3 = "Building strength helps maintain bone density and muscle mass, which are important for overall health and function. Use bodyweight exercises, resistance bands, or light weights to strengthen major muscle groups."
+    
+    elif phase == 'menstrual':
         if age_group == "teen":
             if fitness_goal == "lose weight":
                 subhead1 = "Nutrition"
@@ -271,7 +279,7 @@ def get_recommendation(phase, age_group, fitness_goal):
                 text2 = "Engage in strength training exercises using resistance bands or light weights to build muscle mass and improve overall strength."
                 subhead3 = "Appetite"
                 text3 = "Pay attention to hunger cues and eat regular, balanced meals and snacks to support weight gain and muscle growth."
-            
+
     return subhead1, text1, subhead2, text2, subhead3, text3  # Returning all subheadings and text for old in luteal phase
 
 
