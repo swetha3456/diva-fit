@@ -1,0 +1,210 @@
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&family=Titan+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Play:wght@400;700&display=swap')
+;
+body{
+   
+    font-size: medium;
+  font-weight: 100;
+  font-style: normal;
+  margin: 0px;
+  background-color: #F5CDC5;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1600 800'%3E%3Cg stroke='%23EB9BA2' stroke-width='66.7' stroke-opacity='0.05' %3E%3Ccircle fill='%23F5CDC5' cx='0' cy='0' r='1800'/%3E%3Ccircle fill='%23f5cac2' cx='0' cy='0' r='1700'/%3E%3Ccircle fill='%23f4c7c0' cx='0' cy='0' r='1600'/%3E%3Ccircle fill='%23f4c4bd' cx='0' cy='0' r='1500'/%3E%3Ccircle fill='%23f3c1bb' cx='0' cy='0' r='1400'/%3E%3Ccircle fill='%23f3beb8' cx='0' cy='0' r='1300'/%3E%3Ccircle fill='%23f2bcb6' cx='0' cy='0' r='1200'/%3E%3Ccircle fill='%23f2b9b4' cx='0' cy='0' r='1100'/%3E%3Ccircle fill='%23f1b6b2' cx='0' cy='0' r='1000'/%3E%3Ccircle fill='%23f1b3b0' cx='0' cy='0' r='900'/%3E%3Ccircle fill='%23f0b0ae' cx='0' cy='0' r='800'/%3E%3Ccircle fill='%23efadac' cx='0' cy='0' r='700'/%3E%3Ccircle fill='%23efaaaa' cx='0' cy='0' r='600'/%3E%3Ccircle fill='%23eea7a8' cx='0' cy='0' r='500'/%3E%3Ccircle fill='%23eda4a7' cx='0' cy='0' r='400'/%3E%3Ccircle fill='%23eda1a5' cx='0' cy='0' r='300'/%3E%3Ccircle fill='%23ec9ea3' cx='0' cy='0' r='200'/%3E%3Ccircle fill='%23EB9BA2' cx='0' cy='0' r='100'/%3E%3C/g%3E%3C/svg%3E");
+background-attachment: fixed;
+background-size: cover;
+}
+.logo{
+    font-family: "Titan One", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size:50px;
+    padding-left:30px;
+    -webkit-text-stroke-color:#EB9BA2;
+    -webkit-text-stroke-width:5px;
+  letter-spacing:1.5px;
+}
+.navbar{
+    font-family: "Lilita One", sans-serif;
+
+   display: flex;
+   align-items: center;
+   color: beige;
+   background-color:  #8c4f75;
+   padding: 15px;
+   justify-content: space-between;
+
+   
+}
+.links{
+    display: flex;
+    padding-right:200px;
+    font-size: large;
+    font-weight: 100;
+}
+.item:hover{
+    color: #EB9BA2;
+    cursor:pointer;
+}
+
+.links a {
+  /* Inherits styles from .links */
+  text-decoration: none; /* This line removes the underline */
+  color: inherit;
+}
+
+.name{
+    width:100%;
+    height:800px;
+    position:relative;
+    
+
+}
+.bg{
+    width:100%;
+    height:800px;
+    position:absolute;
+    background-color: rgba(207, 207, 207, 0.727);
+    z-index:1;
+}
+.cover{
+    width:100%;
+    height:800px;
+    background-color: aliceblue;
+
+}
+.tag{
+    font-size: xx-large;
+    color:#040404;
+    font-weight: 100;
+    position:absolute;
+    top:170px;
+    left:500px;
+    z-index:2;
+  font-weight: 700;
+  font-style: normal;
+    padding:10px;
+    border-radius:0 10px 10px 0;
+    height:250px;
+    text-align: center;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-left:30px;
+    font-family: "Analogue Reduced 65 Medium";
+
+    
+}
+.tag p{
+    margin-bottom: 20px;
+    font-family: "Analogue Reduced 65 Medium";
+
+}
+
+.one{
+    font-family: "Lilita One", sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #8c4f75;
+    height:300px;
+    max-width:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding:20px;
+    height:400px;
+}
+
+.img1{
+    width:400px;
+    height:300px;
+    margin:10px;
+}
+.img2{
+    width:500px;
+    height:400px;
+    margin:10px;
+}
+.left{
+    width:300px;
+    height:300px;
+    border-radius:100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F5CDC5;
+}
+.about1{
+    font-size: larger;
+    font-weight: 100;
+    color: #F5CDC5;
+    width:600px;
+    margin:20px;
+}
+ /*Buttons*/
+ .btn {
+    margin-left: 0.7rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 1.0em;
+    text-transform: uppercase;
+    padding: 0.6em 1.2em;
+    background-color: #8c4f75;
+    color:#040404;
+    box-shadow: 0 8px 24px 0 rgb(255 235 167 / 20%);
+    transition: all .3s ease-in-out;
+    left:-10px;
+   }
+   
+   .btn-link {
+    color:#800080;
+    display: block;
+    font-size: .75em;
+    transition: color .3s ease-out;
+   }
+   
+   /*Hover & focus*/
+   .field input:focus::placeholder {
+    opacity: 0;
+    transition: opacity .3s;
+   }
+   
+   .btn:hover {
+    background-color: #5e6681;
+    color: #ffeba7;
+    box-shadow: 0 8px 24px 0 rgb(16 39 112 / 20%);
+   }
+   
+   .btn-link:hover {
+    color: #ffeba7;
+   }
+   .two{
+    display: flex;
+    height:400px;
+    margin:10px;
+   }
+   .block{
+    height:150px;
+    width:800px;
+    background-color:#8c4f75;
+    border-radius: 10px;
+    margin:10px;
+   }
+   .blocks{
+    margin-top:30px;
+   }
+   @font-face {
+    font-family: "Analogue Reduced 65 Medium";
+    src: url("https://db.onlinewebfonts.com/t/fa29944df42dcddc1396c00afddd34a4.eot");
+    src: url("https://db.onlinewebfonts.com/t/fa29944df42dcddc1396c00afddd34a4.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/fa29944df42dcddc1396c00afddd34a4.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/fa29944df42dcddc1396c00afddd34a4.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/fa29944df42dcddc1396c00afddd34a4.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/fa29944df42dcddc1396c00afddd34a4.svg#Analogue Reduced 65 Medium")format("svg");
+}
+.img5{
+    height:500px;
+    width:500px;
+    margin:30px;
+}
