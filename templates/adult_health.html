@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="{{url_for('static', filename='vaccine.css')}}">   
+   <link rel="stylesheet" href="{{url_for('static', filename='health.css')}}">   
 
 </head>
 <body>
@@ -13,45 +13,52 @@
                 <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
                 <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
                 <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
-                <ul class="item"><a href="{{ url_for('vaccine') }}">Vaccines</a></ul>
                 <ul class="item"><a href="{{ url_for('health') }}">Health Check Up</a></ul>
-
             </li>
         </div>
     </div>
     <div class="cardhold">
         <div class="card">
-            <h3>Flu Vaccine</h3>
+            <h3>Regular Physical Examinations</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
               </label>
-            <p>Continue to receive annually.</p>
+            <p>Annual check-ups with a healthcare provider are crucial for monitoring overall health.</p>
         </div>
         <div class="card">
-            <h3>Pneumococcal Vaccine</h3>
+            <h3>Blood Pressure Screening</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Recommended for adults aged 65 and older, or younger adults with certain medical conditions.</p>
+            <p>Regular blood pressure checks are important to monitor cardiovascular health.</p>
         </div>
         <div class="card">
-            <h3>Shingles Vaccine (Herpes Zoster)</h3>
+            <h3>Cervical Cancer Screening</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Recommended for adults aged 50 and older.</p>
+            <p>Starting at age 21, women should undergo regular cervical cancer screenings with Pap smears.</p>
         </div>
         <div class="card">
-            <h3>HPV Vaccine</h3>
+            <h3>Breast Self-Examinations</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Consideration for catch-up vaccination in women aged 27-45 years who have not been previously vaccinated.</p>
+            <p>Regular breast self-examinations are valuable for detecting any changes or abnormalities in breast tissue.</p>
         </div>
+        <div class="card">
+            <h3>Sexually Transmitted Infections (STIs) Screening</h3>
+            <label class="container">
+                <input   type="checkbox">
+                <div class="checkmark"></div>
+            </label>
+            <p>Regular STI screenings are essential for detecting infections such as chlamydia, gonorrhea, and HIV.</p>
+        </div>
+
     </div>
 </body>
 </html>

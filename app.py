@@ -74,6 +74,17 @@ def vaccine():
     elif age_group == 'old' :
         return render_template("old_vaccine.html")   
 
+@app.route("/health")
+def health():
+    age_group, _, _ = get_details(session['username'])
+    if age_group == 'adult':
+        return render_template("adult_health.html")
+    elif age_group == 'teen':
+        return render_template("teen_health.html")
+    elif age_group == 'old' :
+        return render_template("old_health.html")   
+
+
 @app.route("/calendar")
 def calendar():
     if "username" not in session:

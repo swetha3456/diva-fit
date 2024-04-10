@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-   <link rel="stylesheet" href="{{url_for('static', filename='vaccine.css')}}">   
+   <link rel="stylesheet" href="{{url_for('static', filename='health.css')}}">   
 
 </head>
 <body>
@@ -13,62 +13,51 @@
                 <ul class="item"><a href="{{ url_for('exercise') }}">Start workout</a></ul>
                 <ul class="item"><a href="{{ url_for('calendar') }}">Calendar</a></ul>
                 <ul class="item"><a href="{{ url_for('about') }}">About</a></ul>
-                <ul class="item"><a href="{{ url_for('vaccine') }}">Vaccines</a></ul>
                 <ul class="item"><a href="{{ url_for('health') }}">Health Check Up</a></ul>
-
             </li>
         </div>
     </div>
     <div class="cardhold">
         <div class="card">
-            <h3>Hepatitis B Vaccine</h3>
+            <h3>Bone Density Testing (DEXA Scan)</h3>
             <label class="container">
-                <input type="checkbox">
-                <div class="checkmark"></div>
-              </label>
-            <p>Usually given at birth, followed by additional doses during infancy.</p>
-        </div>
-        <div class="card">
-            <h3>DTaP Vaccine (Diphtheria, Tetanus, Pertussis)</h3>
-            <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Given in a series of doses during infancy, childhood, and adolescence.</p>
+            <p>Regular bone density tests are crucial for assessing bone health and detecting osteoporosis</p>
         </div>
         <div class="card">
-            <h3>Polio Vaccine</h3>
+            <h3>Breast Cancer Screening (Mammogram)</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Typically administered in multiple doses during infancy and early childhood.</p>
+            <p>Regular mammograms are essential for early detection of breast cancer, as the risk increases with age.</p>
         </div>
         <div class="card">
-            <h3>MMR Vaccine (Measles, Mumps, Rubella)</h3>
+            <h3>Cardiovascular Health Screening</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Given in two doses, usually around 12-15 months and 4-6 years of age.</p>
+            <p>Comprehensive cardiovascular assessments, including cholesterol levels help monitor heart health.</p>
         </div>
         <div class="card">
-            <h3>Varicella (Chickenpox) Vaccine</h3>
+            <h3>Colorectal Cancer Screening</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Administered in two doses, usually around 12-15 months and 4-6 years of age.</p>
+            <p>Regular screenings for colorectal cancer, such as colonoscopy or fecal occult blood tests.</p>
         </div>
         <div class="card">
-            <h3>HPV Vaccine (Human Papillomavirus)</h3>
+            <h3>Pelvic Health Evaluation</h3>
             <label class="container">
-                <input type="checkbox">
+                <input   type="checkbox">
                 <div class="checkmark"></div>
             </label>
-            <p>Recommended for females aged 9-26 years, given in a series of doses.</p>
+            <p>Postmenopausal women should undergo regular pelvic exams.</p>
         </div>
-
     </div>
 </body>
 </html>
