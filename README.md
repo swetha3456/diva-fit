@@ -13,6 +13,6 @@ DivaFit is designed to help women take control of their health and well-being. F
 # Tech Stack
 Backend: Flask, python
 Frontend: html, css
-Machine Learning: fine-tuning an LLM -> BERT,  Mediapipe
+Machine Learning: LangChain, Hugging Face,  Mediapipe
 Computer Vision: OpenCV
 
