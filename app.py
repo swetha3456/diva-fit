@@ -8,28 +8,11 @@ import threading
 import exercise_fns
 import base64
 import numpy as np
-from transformers import BertTokenizer, BertForQuestionAnswering
 import torch
 import nltk
 
 nltk.download('punkt')
 nltk.download('stopwords')
-
-
-# Load the BERT model and tokenizer
-tokenizer = BertTokenizer.from_pretrained('deepset/bert-base-cased-squad2')
-model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')
-
-
-model_load_path = 'model.pt'
-
-# Load the model
-model = BertForQuestionAnswering.from_pretrained('deepset/bert-base-cased-squad2')  # Instantiate your model class
-model.load_state_dict(torch.load(model_load_path))
-
-# Ensure the model is in evaluation mode
-model.eval()
-
 
 app = Flask(__name__)
 app.secret_key = b"030a8ee0eb274b3e7fd9db490b0fd6a532b1fa1f1fd6825c5852c7363358c4b6"
@@ -47,7 +30,7 @@ def about():
 def home():
     if request.method == "POST":
         question = request.form["question"]
-        answer = predict(question, model)
+        answer = predict(question)
     else:
         if "username" not in session:
             return redirect(url_for("login"))
